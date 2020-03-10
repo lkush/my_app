@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Belarus aDNA project</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'samples/samples.css' %}">
+</head>
+<body>
+	<div>
+		<div class="page-header">
+		<h2>Human ancient DNA study from Belarus territory</h2>
+			<img src="{% static "samples/pic_for_title.jpg" %}" alt="Title image" width="900" height="100">
+			<h2>Summary about human ancient DNA samples from Belarus territory</h2>
+	</div>
+
+	{% for object in objects %}
+		<div>
+			<h3><a style="text-decoration:none" href="/detail/{{ object.sampleid }}">{{ object.sampleid }}</a></h3>
+			<p>{{ object.archperiod}}; {{object.archdate }}</p>
+		</div>
+	{% endfor %}
+
+
+</body>
+</html>
+

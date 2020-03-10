@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Belarus aDNA project</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'samples/samples.css' %}">
+</head>
+<body>
+	<div class="page-header">
+		<h2>Human ancient DNA study from Belarus territory</h2>
+		<img src="{% static "samples/pic_for_title.jpg" %}" alt="Title image" width="900" height="100">
+	</div>
+
+
+
+	<div>
+		<h3>{{ details.sampleid }}</h3>
+	</div>
+
+		<div>
+			<h4>Archaeological information</h4>
+		</div>
+
+		<div>
+			<p>Archaeological period: {{ details.archperiod }}</p>
+			<p>Archaeological culture: {{ details.archculture }}</p>
+			<p>Archaeological date: {{ details.archdate }}</p>
+			<p>Archaeological site: {{ details.archsite }}</p>
+			<p>Geographic location: {{ details.geopoint }}</p>
+		</div>
+		<div>
+			<h4>Genetic information</h4>
+		</div>
+		<div>
+			<p>Genetic sex: {{ details.geneticsex }}</p>
+			<p>MtDNA haplogroup: {{ details.mtdnahg }}</p>
+			<p>Y chromosome haplogroup: {{ details.ychrhg }}</p>
+			<p>Whole genome sequence data: {{ details.wgsdata }}</p>
+		</div>
+
+</body>
+</html>
+
