@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static 'samples/samples.css' %}">
+		<style>
+    .link { color: #191970; } /* CSS link color */
+    </style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
 </head>
 <body>
 	<div>
@@ -16,13 +28,40 @@
 			<h2>Summary about human ancient DNA samples from Belarus territory</h2>
 	</div>
 
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 		<span class="navbar-toggler-icon"></span>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home</a>
+      <a class="nav-item nav-link" href="/samplelist">Samples<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/map">Map</a>
+      <a class="nav-item nav-link" href="#">Contact</a>
+    </div>
+  </div>
+</nav>
+
+		<input class="form-control" id="myInput" type="text" placeholder="Search..">
+		  <div id="myDIV">
+
 	{% for object in objects %}
-		<div>
-			<h3><a style="text-decoration:none" href="/detail/{{ object.sampleid }}">{{ object.sampleid }}</a></h3>
+		<div class="sample_list">
+			<h3><a class="link" style="text-decoration:none" href="/detail/{{ object.sampleid }}">{{ object.sampleid }}</a></h3>
 			<p>{{ object.archperiod}}; {{object.archdate }}</p>
 		</div>
 	{% endfor %}
 
+
+			  <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myDIV *").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 
 </body>
 </html>

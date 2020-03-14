@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static 'samples/samples.css' %}">
+	<style>
+    .link { color: #191970; } /* CSS link color */
+    </style>
 </head>
 <body>
 	<div class="page-header">
@@ -14,21 +17,33 @@
 		<img src="{% static "samples/pic_for_title.jpg" %}" alt="Title image" width="900" height="100" >
 	</div>
 
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 		<span class="navbar-toggler-icon"></span>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/samplelist">Samples</a>
+      <a class="nav-item nav-link" href="/map">Map</a>
+      <a class="nav-item nav-link" href="#">Contact</a>
+    </div>
+  </div>
+</nav>
 
 	<div class="project-title">
-		<p>This website provides an information about human aDNA samples from Belarus territory. </p>
+		<p>This website provides an information about human aDNA samples from Belarus territory </p>
 	</div>
 
-		<div class="column" style="background-color:#aaa;">
-			<h3><a style="text-decoration:none" href="/samplelist">Information about samples</a></h3>
+		<div class="column" style="background-color:#d8ecf3;">
+			<h3><a class="link" style="text-decoration:none" href="/samplelist"> Samples' information</a></h3>
 		</div>
 
-		<div class="column" style="background-color:#bbb;">
-			<h3><a style="text-decoration:none" href="/map">Go to map to get samples' geographic location</a></h3>
+		<div class="column" style="background-color:#d8ecf3;">
+			<h3><a class="link" style="text-decoration:none" href="/map">Map</a></h3>
 		</div>
 
-		<div class="column" style="background-color:#ddd;">
-			<h3><a style="text-decoration:none" href="//">Contact lkushniarevich@gmail.com</a></h3>
+		<div class="column" style="background-color:#d8ecf3;">
+			<h3><a class="link" style="text-decoration:none" href="//">Contact lkushniarevich@gmail.com</a></h3>
 		</div>
 
 </body>

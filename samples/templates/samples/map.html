@@ -14,13 +14,25 @@
 	<img src="{% static "samples/pic_for_title.jpg" %}" alt="Title image" width="900" height="100">
 	</div>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 		<span class="navbar-toggler-icon"></span>
 
-	<div>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home</a>
+      <a class="nav-item nav-link" href="/samplelist">Samples</a>
+      <a class="nav-item nav-link" href="/map">Map<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Contact</a>
+    </div>
+  </div>
+</nav>
+
+
+	<div class="page-header">
 		<h3>Relief map of Belarus</h3>
-	</div>
 		<p><img src={% static "/samples/Relief_Map_of_Belarus.png"%} alt="IMG" width="500" height="333">
-</p>
-
+		</p>
+	</div>
 
 </body>
 </html>

@@ -10,13 +10,16 @@ body {
 .project-title {
   background-color: #F0F8FF;
   padding: 20px;
+  margin: 20px;
+  width: 800px;
+  display: center;
   text-align: center;
   font-size: 18px;
 }
 
-a {
+.column {
     float: left;
-    margin: 20px;
+    margin: 15px;
     text-align:center;
     padding: 70px 0;
     display:block;
@@ -25,4 +28,15 @@ a {
     background-color:#d8ecf3;
 }
 
+.sample_list {
+    margin: 30px;
+}
+
+
+.navbar-nav{
+    font-size: 20px;
+    font-color: #000000;
+    background-color:#F8F8FF;
+    padding:15px;
+}
 
