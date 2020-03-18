@@ -19,8 +19,8 @@
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home</a>
-      <a class="nav-item nav-link" href="/samplelist"</a>
+      <a class="nav-item nav-link active" href="/">Home</a>
+      <a class="nav-item nav-link" href="/samplelist">Samples</a>
       <a class="nav-item nav-link" href="/map">Map</a>
       <a class="nav-item nav-link" href="#">Contact</a>
     </div>
@@ -28,31 +28,32 @@
 </nav>
 
 
-	<div>
+	<div class="sample-id">
 		<h3>{{ details.sampleid }}</h3>
 	</div>
 
-		<div>
-			<h4>Archaeological information</h4>
+		<div class="sample-detail-arch">
+			<h3>Archaeological information</h3>
+
+			<div>
+				<p>Archaeological period: {{ details.archperiod }}</p>
+				<p>Archaeological culture: {{ details.archculture }}</p>
+				<p>Archaeological date: {{ details.archdate }}</p>
+				<p>Archaeological site: {{ details.archsite }}</p>
+				<p>Geographic location: {{ details.geopoint }}</p>
+		    </div>
 		</div>
 
-		<div>
-			<p>Archaeological period: {{ details.archperiod }}</p>
-			<p>Archaeological culture: {{ details.archculture }}</p>
-			<p>Archaeological date: {{ details.archdate }}</p>
-			<p>Archaeological site: {{ details.archsite }}</p>
-			<p>Geographic location: {{ details.geopoint }}</p>
-		</div>
-		<div>
-			<h4>Genetic information</h4>
-		</div>
+		<div class="sample-detail-genet">
+			<h3>Genetic information</h3>
+
 		<div>
 			<p>Genetic sex: {{ details.geneticsex }}</p>
 			<p>MtDNA haplogroup: {{ details.mtdnahg }}</p>
 			<p>Y chromosome haplogroup: {{ details.ychrhg }}</p>
 			<p>Whole genome sequence data: {{ details.wgsdata }}</p>
 		</div>
-
+		</div>
 </body>
 </html>
 

@@ -23,8 +23,8 @@ body {
     text-align:center;
     padding: 70px 0;
     display:block;
-    width:300px;
-    height:300px;
+    width:285px;
+    height:285px;
     background-color:#d8ecf3;
 }
 
@@ -40,3 +40,19 @@ body {
     padding:15px;
 }
 
+.sample-id{
+margin: 30px;
+color: #000099;
+font-weight: bold;
+}
+
+
+.sample-detail-arch{
+margin: 30px;
+font-weight: bold;
+}
+
+.sample-detail-genet{
+margin: 30px;
+font-weight: bold;
+}

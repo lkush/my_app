@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80448a2e-5104-4db9-b92a-f105e06af06f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samples/static/samples/samples.css" beforeDir="false" afterPath="$PROJECT_DIR$/samples/static/samples/samples.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/templates/samples/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/samples/templates/samples/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/templates/samples/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/samples/templates/samples/map.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samples/templates/samples/sample_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/samples/templates/samples/sample_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/templates/samples/sample_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/samples/templates/samples/sample_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,5 +72,9 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="106" y="47" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1583360390750" />
+    <state x="318" y="217" key="com.intellij.ide.util.TipDialog" timestamp="1584312517635">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="318" y="217" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1584312517635" />
   </component>
 </project>
