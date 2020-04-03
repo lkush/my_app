@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static 'samples/samples.css' %}">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
 <div class="page-header">
@@ -27,13 +29,110 @@
   </div>
 </nav>
 
+ <div id='map' width="100%" style='height:600px'></div>
+   <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGVuYWt1c2giLCJhIjoiY2s4aHdjY3pyMDQ1dzNsbWNucWQ0Znh0eCJ9.4CrzJDbd-sbqv2vAHtb93w';
+    var map = new mapboxgl.Map({
+     container: 'map',
+     style: 'mapbox://styles/mapbox/streets-v10',
+     center: [27.6, 53.9],
+     zoom: 5
+    });
 
-	<div class="page-header">
-		<h3>Relief map of Belarus</h3>
-		<p><img src={% static "/samples/Relief_Map_of_Belarus.png"%} alt="IMG" width="500" height="333">
-		</p>
-	</div>
+    // add a full screen extension button
+    map.addControl(new mapboxgl.FullscreenControl());
 
+    map.on('load', function() {
+        map.addSource('places', {
+            'type': 'geojson',
+            'data': {
+            'type': 'FeatureCollection',
+            'features': [
+                        {
+                        // feature for BEL003
+                        'type': 'Feature',
+                        'geometry': {
+                        'type': 'Point',
+                        'coordinates': [28.168433, 55.258692]
+                        },
+              'properties': {
+                'description':
+                    '<strong>BEL003</strong><p>BEL003: Middle Age; 12-13 cc AD</p>',
+                'title': 'BEL003',
+                'icon': 'circle',
+                'icon-color': '#3bb2d0'
+               }
+             },
+                        {
+                        // feature for BEL001
+                        'type': 'Feature',
+                        'geometry': {
+                        'type': 'Point',
+                        'coordinates': [25.827951, 53.602517]
+                        },
+                'properties': {
+                'description':
+                    '<strong>BEL003</strong><p>BEL001: Middle Age; 11-12 cc AD</p>',
+                'title': 'BEL001',
+                'icon': 'circle',
+                'icon-color': '#3bb2d0'
+                }
+             }
+            ]
+          }
+});
+
+map.addLayer({
+'id': 'places',
+'type': 'symbol',
+'source': 'places',
+'layout': {
+// get the icon name from the source's "icon" property
+'icon-image': '{icon}-15',
+'icon-allow-overlap': true,
+// get the title name from the source's "title" property
+'text-field': ['get', 'title'],
+'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+'text-offset': [0, 0.6],
+'text-anchor': 'top'
+}
+});
+
+// Create a popup, but don't add it to the map yet.
+var popup = new mapboxgl.Popup({
+closeButton: false,
+closeOnClick: false
+});
+
+map.on('mouseenter', 'places', function(e) {
+// Change the cursor style as a UI indicator.
+map.getCanvas().style.cursor = 'pointer';
+
+var coordinates = e.features[0].geometry.coordinates.slice();
+var description = e.features[0].properties.description;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+}
+
+// Populate the popup and set its coordinates
+// based on the feature found.
+popup
+.setLngLat(coordinates)
+.setHTML(description)
+.addTo(map);
+});
+
+map.on('mouseleave', 'places', function() {
+map.getCanvas().style.cursor = '';
+popup.remove();
+
+});
+});
+   </script>
 </body>
 </html>
 
