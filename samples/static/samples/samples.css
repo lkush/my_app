@@ -19,12 +19,12 @@ body {
 
 .column {
     float: left;
-    margin: 15px;
+    margin: 20px;
     text-align:center;
     padding: 70px 0;
     display:block;
     width:285px;
-    height:285px;
+    height:270px;
     background-color:#d8ecf3;
 }
 

@@ -15,6 +15,7 @@ def sample_detail(request, sampleid):
     return render(request, 'samples/sample_detail.html', {'details': details})
 
 def map(request):
+    objects = Sampleinfo.objects.all()
     mapbox_access_token = 'pk.eyJ1IjoibGVuYWt1c2giLCJhIjoiY2s4aHdjY3pyMDQ1dzNsbWNucWQ0Znh0eCJ9.4CrzJDbd-sbqv2vAHtb93w'
     return render(request, 'samples/map.html',
-                  { 'mapbox_access_token': mapbox_access_token })
+                  {'mapbox_access_token': mapbox_access_token, 'objects': objects})
